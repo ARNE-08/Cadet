@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 
@@ -34,6 +34,8 @@ char	*ft_strdup(const char *s1)
 
 	len = ft_strlen(s1);
 	s2 = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s2)
+		return (0);
 	s2 = ft_strcpy(s2, s1);
 	return (s2);
 }
