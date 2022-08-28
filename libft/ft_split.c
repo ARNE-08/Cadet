@@ -6,13 +6,13 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 09:28:24 by psaengha          #+#    #+#             */
-/*   Updated: 2022/08/27 09:28:26 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/08/27 19:05:09 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count(char const *str, char c)
+static int	count(char const *str, char c)
 {
 	int	i;
 	int	y;
@@ -28,7 +28,7 @@ int	count(char const *str, char c)
 	return (i);
 }
 
-char	*word(char const *s, int pos)
+static char	*word(char const *s, int pos)
 {
 	char	*str;
 	int		len;
@@ -53,7 +53,7 @@ char	*word(char const *s, int pos)
 	return (str);
 }
 
-char	**ft_spilt(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**dst;
 	int		i;

@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 09:51:15 by psaengha          #+#    #+#             */
-/*   Updated: 2022/08/27 09:51:16 by psaengha         ###   ########.fr       */
+/*   Created: 2022/08/27 16:08:51 by psaengha          #+#    #+#             */
+/*   Updated: 2022/08/27 16:08:52 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	c1;
-	unsigned char	c2;
-	const char		*ch1;
-	const char		*ch2;
+	unsigned long	i;
+	int				len;
+	unsigned char	*ch;
 
-	c1 = '0';
-	c2 = '0';
-	ch1 = (const char *)s1;
-	ch2 = (const char *)s2;
-	while ((c1 == c2) && n > 0)
+	i = 0;
+	len = ft_strlen(s);
+	ch = (unsigned char *)s;
+	while (ch[i] != '\0' && i < n)
 	{
-		c1 = *ch1++;
-		c2 = *ch2++;
-		n--;
+		if (ch[i] == (unsigned char)c)
+		{
+			ch = ch + i;
+			s = ch;
+			return ((void *)s);
+		}
+		i++;
 	}
-	return (c1 - c2);
+	if (c == 0)
+	{
+		ch = ch + len;
+		s = ch;
+		return ((void *)s);
+	}
+	return (0);
 }
