@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 20:42:49 by psaengha          #+#    #+#             */
-/*   Updated: 2022/09/10 15:58:38 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/11 21:48:06 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <string.h>
 # include <stdio.h>
 
-/*typedef struct s_list
+typedef struct s_list
 {
-	void	*content;
+	void			*content;
 	struct s_lict	*next;
-}	t_list;*/
+}	t_list;
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);

@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 16:22:29 by psaengha          #+#    #+#             */
-/*   Updated: 2022/09/10 16:33:31 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/11 20:50:59 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
-	if (len == 0 || needle[0] == '\0')
+	if (len == 0 && needle[0] != '\0')
+		return (0);
+	if (needle[0] == '\0')
 		return ((char *)haystack);
 	while (i < len && *haystack)
 	{

@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 01:15:14 by psaengha          #+#    #+#             */
-/*   Updated: 2022/08/28 01:15:15 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/11 21:46:42 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
+
+/*int	main(void)
+{
+	char	test[] = "lorem ipsum";
+	char	s2[] = "";
+	printf("%s", ft_strjoin(test, s2));
+}
+war machine testcase 3 Abort dunno why*/

@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 00:31:50 by psaengha          #+#    #+#             */
-/*   Updated: 2022/08/28 00:31:51 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/11 14:34:20 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
+//2 8
+
 /*int	main(void)
 {
-	char	s[] = "i just want this part #########";
-	printf("%s", ft_substr(s, 5, 20));
+	char	s[] = "tripouille";
+	printf("%s", ft_substr(s, 0, 42000));
 }*/

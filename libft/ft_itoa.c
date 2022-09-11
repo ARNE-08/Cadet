@@ -6,7 +6,7 @@
 /*   By: psaengha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 10:13:51 by psaengha          #+#    #+#             */
-/*   Updated: 2022/09/10 11:53:54 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/11 21:47:15 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,10 +112,12 @@ char	*ft_itoa(int n)
 }
 
 /*int	main(void) {
-	printf("%s", ft_itoa(-2147483648));
+	printf("%d", strcmp(ft_itoa(0), "0"));
+	//printf("%s\n", ft_itoa(-2147483648LL));
+	//printf("%d\n", strcmp(ft_itoa(-2147483648LL), "-2147483648"));
 	return (0);
-}
-len count "-" as len beacause when we turn it to
+}*/
+/*len count "-" as len beacause when we turn it to
 char [0] will be '-' and we still need more digit to fit the int
 so in ito we minus the len when n < 0
 in while loop divide len use to turn len in to 10, 100, etc

@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 08:56:41 by psaengha          #+#    #+#             */
-/*   Updated: 2022/08/27 08:56:42 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/11 08:57:21 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	len = ft_strlen(s);
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 		{
 			s = s + i;
 			return ((char *)s);
@@ -35,3 +35,12 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
+
+/*int	main(void)
+{
+	char	s[] = "tripouille";
+	int	test = 't' + 256;
+	printf("%d\n", test);
+	printf("%c\n", (char)test);
+	printf("%s", ft_strchr(s, 't' + 256));
+}*/

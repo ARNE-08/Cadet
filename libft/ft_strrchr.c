@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 11:24:12 by psaengha          #+#    #+#             */
-/*   Updated: 2022/08/27 11:24:15 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/11 09:03:17 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	while (l >= 0)
 	{
-		if (s[l] == c)
+		if (s[l] == (char)c)
 		{
 			s = s + l;
 			return ((char *)s);
