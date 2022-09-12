@@ -29,7 +29,7 @@ typedef struct s_list
 
 //to access member
 /*ex. have char name[5], int salary
-you can access by t_list.name = "...." or t_.list.salary = 100*/ 
+you can access by t_list->name = "...." or t_list->salary = 100*/ 
 
 //https://www.programiz.com/c-programming/c-structures
 int		ft_isalpha(int c);
