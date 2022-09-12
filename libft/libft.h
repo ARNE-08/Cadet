@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 20:42:49 by psaengha          #+#    #+#             */
-/*   Updated: 2022/09/11 21:48:06 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/12 11:19:20 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@
 typedef struct s_list
 {
 	void			*content;
-	struct s_lict	*next;
+	struct s_list	*next;
 }	t_list;
+//struct void name content The data contained in the node. 
+//allows to store any kind of data.
+//next: The address of the next node,
+//or NULL if the next node is the last one.
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);
@@ -58,5 +62,8 @@ void	ft_putendl_fd(char *s, int fd);
 char	*ft_itoa(int n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+//int		ft_lstsize(t_list *lst);
 
 #endif
