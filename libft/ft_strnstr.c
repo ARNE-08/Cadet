@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 16:22:29 by psaengha          #+#    #+#             */
-/*   Updated: 2022/09/11 20:50:59 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:13:59 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,88 +14,25 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned long	i;
-	int				j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	j = 0;
 	if (len == 0 && needle[0] != '\0')
 		return (0);
 	if (needle[0] == '\0')
 		return ((char *)haystack);
-	while (i < len && *haystack)
+	while (haystack[i] && i < len)
 	{
-		if (haystack[i] == needle[j])
+		if (haystack[i] == needle[0])
 		{
-			if (needle[j + 1] == '\0')
-				return ((char *)haystack + (i - j));
-			j++;
-		}
-		else
-		{
-			i = i - j;
 			j = 0;
+			while (needle[j] && needle[j] == haystack[i + j] && i + j < len)
+				j++;
+			if (needle[j] == '\0')
+				return ((char *)haystack + i);
 		}
 		i++;
 	}
 	return (0);
 }
-
-/*char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	unsigned long	i;
-	int				j;
-
-	i = 0;
-	j = 0;
-	if (*haystack == '\0' && *needle == '\0')
-		return ((char *)haystack);
-	if ((len == 0 && *needle != '\0') || *haystack == '\0')
-		return (0);
-	while (i < len && *haystack)
-	{
-		if (haystack[i] == needle[j])
-		{
-			if (needle[j + 1] == '\0')
-				return ((char *)haystack + (i - j));
-			j++;
-		}
-		else
-		{
-			i = i - j;
-			j = 0;
-		}
-		i++;
-	}
-	return (0);
-}
-
-*char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	unsigned long	i;
-	int				j;
-
-	i = 0;
-	j = 0;
-	if (len == 0 || needle[0] == '\0')
-		return ((char *)haystack);
-	while (i++ < len && *haystack)
-	{
-		if (haystack[i] == needle[j])
-		{
-			if (needle[j + 1] == '\0')
-			{
-				i -= j;
-				haystack += i;
-				return ((char *)haystack);
-			}
-			j++;
-		}
-		else
-		{
-			i = i - j;
-			j = 0;
-		}
-	}
-	return (0);
-}*/

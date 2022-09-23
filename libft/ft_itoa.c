@@ -6,17 +6,17 @@
 /*   By: psaengha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 10:13:51 by psaengha          #+#    #+#             */
-/*   Updated: 2022/09/11 21:47:15 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/23 20:26:34 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	numlen(int n)
+static int	numlen(long n)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	if (n < 0)
 	{
 		n *= -1;
@@ -27,7 +27,7 @@ static int	numlen(int n)
 		n /= 10;
 		i++;
 	}
-	return (i + 1);
+	return (i);
 }
 
 static int	divide(int len)
@@ -43,80 +43,33 @@ static int	divide(int len)
 	return (digit);
 }
 
-static char	*makere(char *re, int n, int pos)
-{
-	int	len;
-	int	uselen;
-
-	len = numlen(n);
-	uselen = len;
-	if (re[0] == '-')
-		uselen++;
-	while (pos < uselen)
-	{
-		re[pos] = ((n / divide(len)) % 10) + 48;
-		pos++;
-		len--;
-	}
-	re[uselen] = '\0';
-	return (re);
-}
-
-static char	*intmin(char *re, int pos)
-{
-	int	n;
-	int	len;
-	int	uselen;
-
-	n = 214748364;
-	len = numlen(n);
-	uselen = len + 1;
-	while (pos < uselen)
-	{
-		re[pos] = ((n / divide(len)) % 10) + 48;
-		pos++;
-		len--;
-	}
-	re[10] = '8';
-	re[11] = '\0';
-	return (re);
-}
-
 char	*ft_itoa(int n)
 {
-	int		i;
+	long	num;
 	int		len;
-	int		uselen;
+	int		use;
+	int		i;
 	char	*re;
 
 	i = 0;
-	len = numlen(n);
-	uselen = len;
+	num = n;
+	len = numlen(num);
+	use = len;
 	re = malloc(sizeof(char) * len + 1);
 	if (!re)
 		return (0);
-	if (n < 0)
+	if (num < 0)
 	{
-		re[i] = '-';
-		n *= -1;
-		i++;
+		re[i++] = '-';
+		num *= -1;
 		len--;
 	}
-	if (n == -2147483648)
-	{
-		re = intmin(re, i);
-		return (re);
-	}
-	re = makere(re, n, i);
+	while (i < use)
+		re[i++] = ((num / divide(len--)) % 10) + 48;
+	re[use] = '\0';
 	return (re);
 }
 
-/*int	main(void) {
-	printf("%d", strcmp(ft_itoa(0), "0"));
-	//printf("%s\n", ft_itoa(-2147483648LL));
-	//printf("%d\n", strcmp(ft_itoa(-2147483648LL), "-2147483648"));
-	return (0);
-}*/
 /*len count "-" as len beacause when we turn it to
 char [0] will be '-' and we still need more digit to fit the int
 so in ito we minus the len when n < 0

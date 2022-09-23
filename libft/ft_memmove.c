@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 10:19:28 by psaengha          #+#    #+#             */
-/*   Updated: 2022/08/28 10:19:32 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:19:07 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return ((char *)dst);
 }
-/*
-int	main(void)
-{
-	printf("%s", ft_memmove("Hello", "sandy", sizeof("sandy")));
-}
-int	main ()
-{
-	char dest[] = "oldstring";
-	const char src[]  = "newstring";
-	printf("Before memmove dest = %s, src = %s\n", dest, src);
-	ft_memmove(dest, src, 9);
-	printf("After memmove dest = %s, src = %s\n", dest, src);
-	return(0);
-}*/
 
 /*void	*ft_memmove(void *dst, const void *src, size_t len)
 {

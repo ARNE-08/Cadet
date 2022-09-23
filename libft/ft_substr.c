@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 00:31:50 by psaengha          #+#    #+#             */
-/*   Updated: 2022/09/11 14:34:20 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/23 20:27:30 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
-	str = malloc(sizeof(char) * (len + 1));
-	if (!s || !str)
+	if (!s)
+		return (0);
+	if (start > ft_strlen(s))
+		str = malloc(sizeof(char));
+	else if (start < len && len >= ft_strlen(s))
+		str = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
+	else
+		str = malloc(sizeof(char) * len + 1);
+	if (!str)
 		return (0);
 	while (s[i] != '\0')
 	{
@@ -32,11 +39,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[j] = '\0';
 	return (str);
 }
-
-//2 8
-
-/*int	main(void)
-{
-	char	s[] = "tripouille";
-	printf("%s", ft_substr(s, 0, 42000));
-}*/

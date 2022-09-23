@@ -6,7 +6,7 @@
 /*   By: psaengha <psaengha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 01:15:14 by psaengha          #+#    #+#             */
-/*   Updated: 2022/09/11 21:46:42 by psaengha         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:29:14 by psaengha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	len;
-	size_t	i;
-	int		j;
 
-	i = 0;
-	j = 0;
 	if (!s1 || !s2)
 		return (0);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
-	while (i < len)
-	{
-		while (i < ft_strlen(s1))
-		{
-			str[i] = s1[i];
-			i++;
-		}
-		str[i++] = s2[j++];
-	}
-	str[i] = '\0';
-	return (str);
+	while (*s1)
+		*str++ = *s1++;
+	while (*s2)
+		*str++ = *s2++;
+	*str = '\0';
+	return (str - len);
 }
 
 /*int	main(void)
@@ -45,5 +36,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	test[] = "lorem ipsum";
 	char	s2[] = "";
 	printf("%s", ft_strjoin(test, s2));
-}
-war machine testcase 3 Abort dunno why*/
+}*/
